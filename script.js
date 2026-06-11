@@ -1,4 +1,4 @@
-/* Diego Alvarez Rincón — interacciones
+/* Diego Alvarez Rincón — interacciones v2 (liquid glass)
    GSAP + ScrollTrigger (CDN). Respeta prefers-reduced-motion. */
 
 (function () {
@@ -7,7 +7,29 @@
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var hasGsap = typeof gsap !== 'undefined';
 
-  /* ---------- Contadores de métricas (sin GSAP, con rAF) ---------- */
+  /* ---------- Menú móvil ---------- */
+  var toggle = document.querySelector('.nav__toggle');
+  var menu = document.querySelector('.mobile-menu');
+  var iconMenu = toggle ? toggle.querySelector('.icon-menu') : null;
+  var iconX = toggle ? toggle.querySelector('.icon-x') : null;
+
+  function setMenu(open) {
+    if (!menu || !toggle) return;
+    menu.hidden = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    if (iconMenu) iconMenu.style.display = open ? 'none' : '';
+    if (iconX) iconX.style.display = open ? '' : 'none';
+  }
+
+  if (toggle) {
+    toggle.addEventListener('click', function () { setMenu(menu.hidden); });
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { setMenu(false); });
+    });
+  }
+
+  /* ---------- Contadores de métricas ---------- */
   function animateCounter(el) {
     var target = parseFloat(el.dataset.count);
     var prefix = el.dataset.prefix || '';
@@ -28,7 +50,7 @@
     function step(ts) {
       if (!start) start = ts;
       var p = Math.min((ts - start) / duration, 1);
-      var eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+      var eased = 1 - Math.pow(1 - p, 3);
       el.textContent = fmt(target * eased);
       if (p < 1) requestAnimationFrame(step);
     }
@@ -56,25 +78,13 @@
 
   gsap.registerPlugin(ScrollTrigger);
 
-  /* ---------- Hero: timeline de entrada ---------- */
-  var heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-
-  heroTl
-    .from('.hero__title .line > span', {
-      yPercent: 110,
-      duration: 1.0,
-      stagger: 0.12
-    })
+  /* ---------- Hero: entrada ---------- */
+  gsap.timeline({ defaults: { ease: 'power3.out' } })
+    .from('.hero__title .line > span', { yPercent: 110, duration: 1.0, stagger: 0.12 }, 0.15)
     .from('.hero__kicker', { opacity: 0, y: 14, duration: 0.6 }, '-=0.55')
     .from('.hero__sub', { opacity: 0, y: 18, duration: 0.7 }, '-=0.35')
     .from('.hero__ctas', { opacity: 0, y: 18, duration: 0.7 }, '-=0.45')
-    .from('.hero__photo-frame', {
-      clipPath: 'inset(0 0 100% 0)',
-      duration: 1.1,
-      ease: 'power4.inOut'
-    }, 0.25)
-    .from('.hero__tag', { opacity: 0, y: 12, duration: 0.6 }, '-=0.4')
-    .from('.hero__scroll', { opacity: 0, duration: 0.6 }, '-=0.3');
+    .from('.nav', { opacity: 0, y: -12, duration: 0.7 }, 0.3);
 
   /* ---------- Reveals por scroll ---------- */
   function revealBatch(selector, opts) {
@@ -95,12 +105,12 @@
   revealBatch('.section-title');
   revealBatch('.about__text', { y: 40 });
   revealBatch('.about__facts p');
+  revealBatch('.about__photo');
   revealBatch('.build-card');
   revealBatch('.exp__item', { y: 24 });
   revealBatch('.post-card');
   revealBatch('.creds__col');
-  revealBatch('.contact__sub');
-  revealBatch('.contact__ctas');
+  revealBatch('.contact__inner', { y: 40 });
 
   /* Título de contacto: líneas tipo hero */
   gsap.from('.contact__title .line > span', {
@@ -109,18 +119,6 @@
     stagger: 0.12,
     ease: 'power3.out',
     scrollTrigger: { trigger: '.contact__title', start: 'top 82%' }
-  });
-
-  /* Parallax sutil de la foto */
-  gsap.to('.hero__photo-frame img', {
-    yPercent: 8,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '.hero',
-      start: 'top top',
-      end: 'bottom top',
-      scrub: true
-    }
   });
 
   /* Skills: stagger de chips */

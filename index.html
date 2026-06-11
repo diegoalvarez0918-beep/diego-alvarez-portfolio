@@ -9,66 +9,87 @@
   <meta property="og:description" content="100+ iniciativas al año, comunidad de 400+ miembros de ICC Colombia y soluciones internas construidas con IA. Bogotá, Colombia." />
   <meta property="og:image" content="https://diego-alvarez-portfolio.vercel.app/assets/profile-photo.jpg" />
   <meta property="og:type" content="website" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B0E14'/%3E%3Ctext x='32' y='43' font-family='Arial' font-size='30' font-weight='bold' fill='%23FF5A1F' text-anchor='middle'%3EDA%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A0A0C'/%3E%3Ctext x='32' y='43' font-family='Arial' font-size='30' font-weight='bold' fill='%23FF5A1F' text-anchor='middle'%3EDA%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <div class="grid-bg" aria-hidden="true"></div>
-
+  <!-- NAV -->
   <header class="nav">
-    <a class="nav__logo" href="#top">D<span>A</span></a>
-    <nav class="nav__links">
-      <a href="#construyo">Construyo</a>
-      <a href="#experiencia">Experiencia</a>
-      <a href="#voz">Voz</a>
-      <a href="#contacto" class="nav__cta">Conectemos</a>
+    <a class="nav__logo" href="#top">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.33-6 4Z"/></svg>
+      <span>Diego Alvarez</span>
+    </a>
+
+    <nav class="nav__pill liquid-glass" aria-label="Navegación principal">
+      <a class="nav__link is-active" href="#top">Inicio</a>
+      <a class="nav__link" href="#construyo">Construyo</a>
+      <a class="nav__link" href="#experiencia">Experiencia</a>
+      <a class="nav__link" href="#voz">Voz</a>
     </nav>
+
+    <div class="nav__ctas">
+      <a class="btn-glass liquid-glass" href="mailto:diego.alvarez0918@gmail.com">Escríbeme</a>
+      <a class="btn-solid" href="https://www.linkedin.com/in/diego-alvarez-rinc%C3%B3n-582580190" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+
+    <button class="nav__toggle liquid-glass" aria-label="Abrir menú" aria-expanded="false">
+      <svg class="icon-menu" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg class="icon-x" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
   </header>
+
+  <!-- MENÚ MÓVIL -->
+  <div class="mobile-menu liquid-glass" hidden>
+    <a class="mobile-menu__link is-active" href="#top">Inicio</a>
+    <a class="mobile-menu__link" href="#construyo">Construyo</a>
+    <a class="mobile-menu__link" href="#experiencia">Experiencia</a>
+    <a class="mobile-menu__link" href="#voz">Voz</a>
+    <div class="mobile-menu__ctas">
+      <a class="btn-glass liquid-glass" href="mailto:diego.alvarez0918@gmail.com">Escríbeme</a>
+      <a class="btn-solid" href="https://www.linkedin.com/in/diego-alvarez-rinc%C3%B3n-582580190" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
 
   <main id="top">
 
     <!-- HERO -->
     <section class="hero">
+      <video class="hero__video" autoplay muted loop playsinline preload="auto" src="assets/hero-bg.mp4" aria-hidden="true"></video>
+      <div class="hero__shade" aria-hidden="true"></div>
+
       <div class="hero__content">
-        <p class="hero__kicker mono reveal-line">Bogotá D.C. · Program Manager · AI-first Builder</p>
+        <p class="hero__kicker mono">Bogotá D.C. · Program Manager · AI-first Builder</p>
         <h1 class="hero__title">
-          <span class="line"><span>Diego</span></span>
-          <span class="line"><span>Alvarez <em>Rincón</em></span></span>
+          <span class="line"><span>Opero programas de alto impacto.</span></span>
+          <span class="line"><span>Construyo con <em>IA</em>.</span></span>
         </h1>
-        <p class="hero__sub reveal-line">Lidero programas, operaciones y eventos de alto impacto de principio a fin — y construyo soluciones con <strong>IA</strong> para acelerar la operación, eliminar fricción y decidir mejor.</p>
-        <div class="hero__ctas reveal-line">
-          <a class="btn btn--primary" href="https://www.linkedin.com/in/diego-alvarez-rinc%C3%B3n-582580190" target="_blank" rel="noopener">Conecta en LinkedIn</a>
-          <a class="btn btn--ghost" href="mailto:diego.alvarez0918@gmail.com">Escríbeme</a>
+        <p class="hero__sub">Más de 100 iniciativas al año entre programas ejecutivos, eventos y comunidades — y soluciones internas con IA y no-code para acelerar la operación, eliminar fricción y decidir mejor.</p>
+        <div class="hero__ctas">
+          <a class="btn-solid btn-lg" href="https://www.linkedin.com/in/diego-alvarez-rinc%C3%B3n-582580190" target="_blank" rel="noopener">Conecta en LinkedIn</a>
+          <a class="btn-glass liquid-glass btn-lg" href="#construyo">Ver lo que construyo</a>
         </div>
       </div>
-      <div class="hero__media">
-        <div class="hero__photo-frame">
-          <img src="assets/profile-photo.jpg" alt="Retrato de Diego Alvarez Rincón" width="800" height="800" />
-        </div>
-        <p class="hero__tag mono">Mentalidad de CEO · velocidad de ejecución · accountability total</p>
-      </div>
-      <a class="hero__scroll mono" href="#metricas" aria-label="Bajar a métricas">scroll<span class="hero__scroll-line"></span></a>
     </section>
 
     <!-- MÉTRICAS -->
     <section class="metrics" id="metricas">
-      <div class="metric">
+      <div class="metric liquid-glass">
         <span class="metric__num mono" data-count="100" data-suffix="+">0</span>
         <span class="metric__label">iniciativas lideradas al año</span>
       </div>
-      <div class="metric">
+      <div class="metric liquid-glass">
         <span class="metric__num mono" data-count="400" data-suffix="+">0</span>
         <span class="metric__label">miembros en la comunidad ICC Colombia</span>
       </div>
-      <div class="metric">
+      <div class="metric liquid-glass">
         <span class="metric__num mono" data-count="3000" data-suffix="+">0</span>
         <span class="metric__label">seguidores orgánicos del canal de ICC Colombia</span>
       </div>
-      <div class="metric">
+      <div class="metric liquid-glass">
         <span class="metric__num mono" data-count="2.67" data-prefix="USD " data-suffix="M" data-decimals="2">0</span>
         <span class="metric__label">en presupuestos gestionados</span>
       </div>
@@ -80,9 +101,15 @@
       <h2 class="about__text">
         Diseño, ejecuto y mejoro <em>de principio a fin</em>: más de 100 iniciativas anuales entre programas ejecutivos, eventos y espacios de formación, articulando equipos internos y aliados externos con altos estándares de calidad. Construyo soluciones internas con <em>IA y no-code</em> porque la operación no debería frenar las ideas.
       </h2>
-      <div class="about__facts">
-        <p>Desde 2021 trabajo en la <strong>Cámara de Comercio de Bogotá</strong> y en <strong>ICC Colombia</strong>, donde lidero una comunidad de 400+ miembros y escalé el canal de LinkedIn institucional a 3.000+ seguidores orgánicos, convirtiéndolo en el principal canal de convocatoria de programas.</p>
-        <p>He gestionado presupuestos por ~USD 2,67M con accountability total — control operativo y foco en ejecución, sin excusas.</p>
+      <div class="about__row">
+        <div class="about__facts">
+          <p>Desde 2021 trabajo en la <strong>Cámara de Comercio de Bogotá</strong> y en <strong>ICC Colombia</strong>, donde lidero una comunidad de 400+ miembros y escalé el canal de LinkedIn institucional a 3.000+ seguidores orgánicos, convirtiéndolo en el principal canal de convocatoria de programas.</p>
+          <p>He gestionado presupuestos por ~USD 2,67M con accountability total — control operativo y foco en ejecución, sin excusas.</p>
+        </div>
+        <figure class="about__photo liquid-glass">
+          <img src="assets/profile-photo.jpg" alt="Retrato de Diego Alvarez Rincón" width="800" height="800" loading="lazy" />
+          <figcaption class="mono">Mentalidad de CEO · velocidad de ejecución · accountability total</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -91,25 +118,25 @@
       <p class="section-index mono">02 / Construyo con IA</p>
       <h2 class="section-title">Soluciones reales,<br />en producción, hoy.</h2>
       <div class="builds__grid">
-        <article class="build-card">
+        <article class="build-card liquid-glass">
           <span class="build-card__num mono">B·01</span>
           <h3>App interna de gestión de eventos</h3>
           <p>Construida en <strong>Lovable + Supabase</strong> para ICC Colombia: centraliza la operación, reemplaza archivos dispersos y acelera el seguimiento y los reportes ejecutivos.</p>
           <span class="build-card__stack mono">Lovable · Supabase</span>
         </article>
-        <article class="build-card">
+        <article class="build-card liquid-glass">
           <span class="build-card__num mono">B·02</span>
           <h3>Flujo de análisis de feedback</h3>
           <p>Un flujo con <strong>Claude</strong> consolida y analiza el feedback de cada programa e iniciativa, acelerando la toma de decisiones y la mejora continua entre ediciones.</p>
           <span class="build-card__stack mono">Claude</span>
         </article>
-        <article class="build-card">
+        <article class="build-card liquid-glass">
           <span class="build-card__num mono">B·03</span>
           <h3>Automatización del Comité Nacional</h3>
           <p>Workflow interno con <strong>n8n + Claude</strong> que reduce la carga manual en seguimiento, consolidación de insumos y preparación de materiales de ICC Colombia.</p>
           <span class="build-card__stack mono">n8n · Claude</span>
         </article>
-        <article class="build-card">
+        <article class="build-card liquid-glass">
           <span class="build-card__num mono">B·04</span>
           <h3>Proyecto "Voz" + 10X Builders</h3>
           <p>Seis meses construyendo con IA: nuevo proyecto propio en marcha y formación intensiva en <strong>LAB10 / 10X Builders</strong> — definir problemas, levantar MVPs, entender arquitecturas.</p>
@@ -169,22 +196,22 @@
       <p class="section-index mono">04 / En la conversación</p>
       <h2 class="section-title">Lo que estoy<br />pensando en voz alta</h2>
       <div class="voice__grid">
-        <a class="post-card" href="https://www.linkedin.com/posts/diego-alvarez-rinc%C3%B3n-582580190_inici%C3%A9-10x-builders-y-no-hay-punto-de-retorno-activity-7460444260715163648-TVKg" target="_blank" rel="noopener">
+        <a class="post-card liquid-glass" href="https://www.linkedin.com/posts/diego-alvarez-rinc%C3%B3n-582580190_inici%C3%A9-10x-builders-y-no-hay-punto-de-retorno-activity-7460444260715163648-TVKg" target="_blank" rel="noopener">
           <p class="post-card__date mono">May 2026 · 32 reacciones</p>
           <p class="post-card__text">"Inicié 10X Builders y no hay punto de retorno. Llevo 6 meses construyendo con Inteligencia Artificial: una app interna de gestión de eventos para ICC Colombia, un proyecto llamado 'Voz'…"</p>
           <span class="post-card__link mono">Leer en LinkedIn →</span>
         </a>
-        <a class="post-card" href="https://www.linkedin.com/posts/diego-alvarez-rinc%C3%B3n-582580190_si-quieres-construir-tu-primer-agente-de-activity-7468414737765142528-GbgK" target="_blank" rel="noopener">
+        <a class="post-card liquid-glass" href="https://www.linkedin.com/posts/diego-alvarez-rinc%C3%B3n-582580190_si-quieres-construir-tu-primer-agente-de-activity-7468414737765142528-GbgK" target="_blank" rel="noopener">
           <p class="post-card__date mono">Jun 2026 · 20 reacciones</p>
           <p class="post-card__text">"Me he metido de lleno a entender cómo funcionan los sistemas detrás de los agentes de IA: cómo razonan, cómo ejecutan tareas y cómo se conectan con herramientas."</p>
           <span class="post-card__link mono">Leer en LinkedIn →</span>
         </a>
-        <a class="post-card" href="https://www.linkedin.com/posts/diego-alvarez-rinc%C3%B3n-582580190_estatuto-de-ciudadan%C3%ADa-juvenil-caso-de-activity-7468020672103858177-8FQz" target="_blank" rel="noopener">
+        <a class="post-card liquid-glass" href="https://www.linkedin.com/posts/diego-alvarez-rinc%C3%B3n-582580190_estatuto-de-ciudadan%C3%ADa-juvenil-caso-de-activity-7468020672103858177-8FQz" target="_blank" rel="noopener">
           <p class="post-card__date mono">Jun 2026 · 6 reacciones</p>
           <p class="post-card__text">"En solo 1 hora le di una mini clase de Lovable y convertimos una presentación en una experiencia digital clara, visual e interactiva."</p>
           <span class="post-card__link mono">Leer en LinkedIn →</span>
         </a>
-        <a class="post-card" href="https://www.linkedin.com/posts/diego-alvarez-rinc%C3%B3n-582580190_los-invito-a-leer-este-gran-art%C3%ADculo-de-giles-activity-7455412270152626176-x8B-" target="_blank" rel="noopener">
+        <a class="post-card liquid-glass" href="https://www.linkedin.com/posts/diego-alvarez-rinc%C3%B3n-582580190_los-invito-a-leer-este-gran-art%C3%ADculo-de-giles-activity-7455412270152626176-x8B-" target="_blank" rel="noopener">
           <p class="post-card__date mono">Abr 2026</p>
           <p class="post-card__text">"Muchas iniciativas de IA no fracasan porque la tecnología no funcione, sino porque las personas no confían lo suficiente en ella para incorporarla a su trabajo diario."</p>
           <span class="post-card__link mono">Leer en LinkedIn →</span>
@@ -199,16 +226,16 @@
         <div class="creds__col">
           <h3 class="mono creds__h">Enfoque</h3>
           <ul class="creds__skills">
-            <li>Gestión de proyectos</li>
-            <li>Ejecución de eventos</li>
-            <li>Inteligencia Artificial</li>
-            <li>Transformación digital</li>
-            <li>Liderazgo de equipos</li>
-            <li>Comunicaciones estratégicas</li>
-            <li>Negociación</li>
-            <li>Estrategia de contenidos</li>
-            <li>Inteligencia empresarial</li>
-            <li>Branding</li>
+            <li class="liquid-glass">Gestión de proyectos</li>
+            <li class="liquid-glass">Ejecución de eventos</li>
+            <li class="liquid-glass">Inteligencia Artificial</li>
+            <li class="liquid-glass">Transformación digital</li>
+            <li class="liquid-glass">Liderazgo de equipos</li>
+            <li class="liquid-glass">Comunicaciones estratégicas</li>
+            <li class="liquid-glass">Negociación</li>
+            <li class="liquid-glass">Estrategia de contenidos</li>
+            <li class="liquid-glass">Inteligencia empresarial</li>
+            <li class="liquid-glass">Branding</li>
           </ul>
         </div>
         <div class="creds__col">
@@ -230,15 +257,17 @@
 
     <!-- CONTACTO -->
     <section class="contact" id="contacto">
-      <p class="section-index mono">06 / Conectemos</p>
-      <h2 class="contact__title">
-        <span class="line"><span>¿Construimos</span></span>
-        <span class="line"><span>algo <em>juntos</em>?</span></span>
-      </h2>
-      <p class="contact__sub">Programas, eventos, comunidades o soluciones con IA — si hay ejecución de por medio, hablemos.</p>
-      <div class="contact__ctas">
-        <a class="btn btn--primary btn--lg" href="https://www.linkedin.com/in/diego-alvarez-rinc%C3%B3n-582580190" target="_blank" rel="noopener">LinkedIn — Diego Alvarez Rincón</a>
-        <a class="btn btn--ghost btn--lg" href="mailto:diego.alvarez0918@gmail.com">diego.alvarez0918@gmail.com</a>
+      <div class="contact__inner liquid-glass">
+        <p class="section-index mono">06 / Conectemos</p>
+        <h2 class="contact__title">
+          <span class="line"><span>¿Construimos</span></span>
+          <span class="line"><span>algo <em>juntos</em>?</span></span>
+        </h2>
+        <p class="contact__sub">Programas, eventos, comunidades o soluciones con IA — si hay ejecución de por medio, hablemos.</p>
+        <div class="contact__ctas">
+          <a class="btn-solid btn-lg" href="https://www.linkedin.com/in/diego-alvarez-rinc%C3%B3n-582580190" target="_blank" rel="noopener">LinkedIn — Diego Alvarez Rincón</a>
+          <a class="btn-glass liquid-glass btn-lg" href="mailto:diego.alvarez0918@gmail.com">diego.alvarez0918@gmail.com</a>
+        </div>
       </div>
     </section>
 
